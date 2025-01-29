@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Schindler 3D Example</title>
+  <link rel="stylesheet" href="./style.min.css" type="text/css">
+</head>
+
+<body>
+  <div id="MyViewerDiv"></div>
+
+  <!-- The Viewer JS -->
+    <script src="https://developer.api.autodesk.com/modelderivative/v2/viewers/viewer3D.min.js"></script>
+
+  <!-- Developer JS -->
+  <script>
+      var myViewerDiv = document.getElementById('MyViewerDiv');
+      var viewer = new Autodesk.Viewing.Private.GuiViewer3D(myViewerDiv);
+      var options = {
+          'env' : 'Local',
+          'document' : './bb3ceb21-5ece-49a6-8c63-0ff5cbca6bed/0/0.svf'
+      };
+      Autodesk.Viewing.Initializer(options, function() {
+        viewer.start(options.document, options);
+      });
+  </script>
+</body>
+
+</html>
